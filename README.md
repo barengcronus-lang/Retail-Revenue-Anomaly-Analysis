@@ -58,13 +58,14 @@ The raw dataset contained intentionally realistic data quality issues, resolved 
 3. Combined fields split — e.g., "Office Chairs - Standard 158" separated into Sub-Category, Product Name, and Product Code
 4. Text normalization — inconsistent casing and whitespace fixed via Capitalize Each Word, Trim, and Clean Text
 5. Invalid values filtered — e.g., a discount value of "1,5" (150%, clearly erroneous) removed
-6. ~24 targeted Replace Value steps to resolve abbreviations and typos (e.g., province codes like "mp", "w. cape", "kzn" mapped to full names)
+6. ~24 targeted Replace Value steps to resolve abbreviations and typos (e.g., province codes like "mp", "w. cape", "kzn" mapped to full names).
 https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/dd8dbfd9beed4a5e3ccc09bc371bd0f4949b1e9d/STEP%20BY%20STEP%20SCREENSHOTS/2.%20CLEANING
 
 
 ### 3. Feature Engineering
 
 A calculated column sales (excluding discount) = [Quantity] * [Unit Price] was added to isolate gross sales from discount impact, enabling clean analysis of discount effects independent of pricing.
+https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/91bbae9ef4fd90dd5d96dbbf44bc149fc3ecbfb2/STEP%20BY%20STEP%20SCREENSHOTS/3.%20FEATURE%20ENGINEERING
 
 ### 4. Data Modeling — Star Schema
 
