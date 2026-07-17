@@ -25,24 +25,23 @@ Finding: Labels and Paper showed the sharpest revenue-share growth. Drilling int
 
 ## ✅ Findings
 
-
-Office Supply revenue grew significantly (R1,757,409 → R3,555,802) while units sold remained relatively flat (2,010 → 2,029), indicating growth was not volume-driven
-Discount rates were consistent across both years, ruling out promotional activity as the cause
-Discounting only correlated with units sold in Q4 (October–Dececember); no measurable effect from January to early September
-Labels and Paper drove the largest revenue-share gains, followed by Printer Ink, Binders, and Stationery
-Product-level drill-down confirmed pricing changes and product mix shifts (new launches, discontinued underperformers) in January 2024 as the key revenue driver
+1. Office Supply revenue grew significantly (R1,757,409 → R3,555,802) while units sold remained relatively flat (2,010 → 2,029), indicating growth was not volume-driven
+2. Discount rates were consistent across both years, ruling out promotional activity as the cause
+3. Discounting only correlated with units sold in Q4 (October–Dececember); no measurable effect from January to early September
+4. Labels and Paper drove the largest revenue-share gains, followed by Printer Ink, Binders, and Stationery
+5. Product-level drill-down confirmed pricing changes and product mix shifts (new launches, discontinued underperformers) in January 2024 as the key revenue driver
 
 
 ## 💡 Recommendations
 
 
-Reduce discount spend from January–September in Office Supplies — no measurable correlation with units sold in this window
-Concentrate discount budget in October–December, the only period where discounts and units sold move together
-Apply Q4 discounts selectively to underperforming products rather than category-wide, to protect margin
-Investigate the specific pricing/mix decisions behind the Labels and Paper growth to inform future category strategy
-Assess whether Printer Ink, Binders, and Stationery would benefit from similar pricing or mix strategies
-Establish a recurring quarterly review to proactively identify and retire underperforming products
-Add a Revenue per Unit YoY measure to catch future price/mix-driven shifts earlier, without a full retrospective investigation
+1. Reduce discount spend from January–September in Office Supplies — no measurable correlation with units sold in this window
+2. Concentrate discount budget in October–December, the only period where discounts and units sold move together
+3. Apply Q4 discounts selectively to underperforming products rather than category-wide, to protect margin
+4. Investigate the specific pricing/mix decisions behind the Labels and Paper growth to inform future category strategy
+5. Assess whether Printer Ink, Binders, and Stationery would benefit from similar pricing or mix strategies
+6. Establish a recurring quarterly review to proactively identify and retire underperforming products
+7. Add a Revenue per Unit YoY measure to catch future price/mix-driven shifts earlier, without a full retrospective investigation
 
 ## 🛠️ Technical Process
 
@@ -55,12 +54,12 @@ Data was sourced as CSV and connected via Power BI's Text/CSV connector, then tr
 The raw dataset contained intentionally realistic data quality issues, resolved through a structured sequence of applied steps:
 
 
-Inconsistent date formats (2022-12-28, 07/20/2023, 12.12.2022) standardized
-Duplicate rows removed
-Combined fields split — e.g., "Office Chairs - Standard 158" separated into Sub-Category, Product Name, and Product Code
-Text normalization — inconsistent casing and whitespace fixed via Capitalize Each Word, Trim, and Clean Text
-Invalid values filtered — e.g., a discount value of "1,5" (150%, clearly erroneous) removed
-~24 targeted Replace Value steps to resolve abbreviations and typos (e.g., province codes like "mp", "w. cape", "kzn" mapped to full names)
+1. Inconsistent date formats (2022-12-28, 07/20/2023, 12.12.2022) standardized
+2. Duplicate rows removed
+3. Combined fields split — e.g., "Office Chairs - Standard 158" separated into Sub-Category, Product Name, and Product Code
+4. Text normalization — inconsistent casing and whitespace fixed via Capitalize Each Word, Trim, and Clean Text
+5. Invalid values filtered — e.g., a discount value of "1,5" (150%, clearly erroneous) removed
+6. ~24 targeted Replace Value steps to resolve abbreviations and typos (e.g., province codes like "mp", "w. cape", "kzn" mapped to full names)
 
 
 ### 3. Feature Engineering
@@ -72,10 +71,10 @@ A calculated column sales (excluding discount) = [Quantity] * [Unit Price] was a
 The cleaned fact table (Sales_Fact) was connected via one-to-many relationships to four dimension tables:
 
 
-Customer_Dim
-Product_Dim
-Region_Dim
-Date_Table (custom-built, including Month_Name, Quarter, and Week via DAX)
+1. Customer_Dim
+2. Product_Dim
+3. Region_Dim
+4. Date_Table (custom-built, including Month_Name, Quarter, and Week via DAX)
 
 
 ### 5. DAX Measures
@@ -98,7 +97,7 @@ daxYoY Revenue % =
 VAR CurrentRevenue = [Total_Revenue]
 VAR PriorYearRevenue =
     CALCULATE(
-        [Total_Revenue],
+        [Total Revenue],
         SAMEPERIODLASTYEAR(Date_Table[Date])
     )
 VAR Result =
