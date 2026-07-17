@@ -6,7 +6,7 @@ The end-to-end process covers data cleaning, star-schema data modeling, DAX time
 
 ## 🎯 The Business Question
 
-In 2023, Office Supply generated R1,757,409 in revenue from 2,010 units sold. In 2024, revenue rose to R3,555,802 — a ~101% increase — while units sold only grew to 2,029, a marginal change. If customers weren't buying significantly more, what was actually driving the revenue growth?
+In 2023, Office Supply generated R1,757,409 in revenue from 1,676 units sold. In 2024, revenue rose to R3,555,802 — a ~101% increase — while units sold only grew to 1,882, a marginal change. If customers weren't buying significantly more, what was actually driving the revenue growth?
 ## 🔍 The Investigation
 
 ### Hypothesis 1: Discounting
@@ -24,7 +24,7 @@ Finding: Labels and Paper showed the sharpest revenue-share growth. Drilling int
 
 ## ✅ Findings
 
-1. Office Supply revenue grew significantly (R1,757,409 → R3,555,802) while units sold remained relatively flat (2,010 → 2,029), indicating growth was not volume-driven
+1. Office Supply revenue grew significantly (R1,757,409 → R3,555,802) while units sold remained relatively flat (1,676 → 1,882), indicating growth was not volume-driven
 2. Discount rates were consistent across both years, ruling out promotional activity as the cause
 3. Discounting only correlated with units sold in Q4 (October–Dececember); no measurable effect from January to early September
 4. Labels and Paper drove the largest revenue-share gains, followed by Printer Ink, Binders, and Stationery
