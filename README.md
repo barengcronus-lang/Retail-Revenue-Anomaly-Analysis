@@ -59,6 +59,7 @@ The raw dataset contained intentionally realistic data quality issues, resolved 
 4. Text normalization — inconsistent casing and whitespace fixed via Capitalize Each Word, Trim, and Clean Text
 5. Invalid values filtered — e.g., a discount value of "1,5" (150%, clearly erroneous) removed
 6. ~24 targeted Replace Value steps to resolve abbreviations and typos (e.g., province codes like "mp", "w. cape", "kzn" mapped to full names)
+https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/dd8dbfd9beed4a5e3ccc09bc371bd0f4949b1e9d/STEP%20BY%20STEP%20SCREENSHOTS/2.%20CLEANING
 
 
 ### 3. Feature Engineering
