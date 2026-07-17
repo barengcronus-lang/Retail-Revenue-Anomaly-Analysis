@@ -124,6 +124,8 @@ https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/cbec69
 3. Office Supplies: Sub-Category Breakdown — synced matrix and pie chart drilling into revenue, units, and price by subcategory
 4. Findings and Recommendations — narrative conclusions and action items
 
+https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/6d7261a827dcb15b8edbe5dc15743097f67934a2/STEP%20BY%20STEP%20SCREENSHOTS/6.%20FINAL%20REPORT
+
 
 
 ## 🧰 Tools & Skills Demonstrated
