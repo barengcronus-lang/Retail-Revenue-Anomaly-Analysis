@@ -89,7 +89,7 @@ https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/2c84d2
 
 Month-over-month prior sales:
 
-daxSales PM =
+dax Sales PM =
 CALCULATE(
     [Total_Revenue],
     DATEADD(Date_Table[Date], -1, MONTH)
@@ -97,7 +97,7 @@ CALCULATE(
 
 Month-over-month growth %:
 
-daxMoM Growth % = DIVIDE([MoM Growth], [Sales PM])
+dax MoM Growth % = DIVIDE([MoM Growth], [Sales PM])
 
 Year-over-year revenue %:
 
@@ -114,6 +114,8 @@ VAR Result =
         PriorYearRevenue
     )
 RETURN Result
+
+https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/cbec698e04601eebfd26680c991e1a2fc404077a/STEP%20BY%20STEP%20SCREENSHOTS/5.%20DAX%20MEASURES
 
 ### 6. Report Structure — Four-Page Analytical Narrative
 
