@@ -76,13 +76,12 @@ https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/91bbae
 
 The cleaned fact table (Sales_Fact) was connected via one-to-many relationships to four dimension tables:
 
-https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/2c84d2644a7c3c6615232f1adefb509d69dde093/STEP%20BY%20STEP%20SCREENSHOTS/4.%20DATA%20MODELLING
-
-
 1. Customer_Dim
 2. Product_Dim
 3. Region_Dim
 4. Date_Table (custom-built, including Month_Name, Quarter, and Week via DAX)
+
+https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/2c84d2644a7c3c6615232f1adefb509d69dde093/STEP%20BY%20STEP%20SCREENSHOTS/4.%20DATA%20MODELLING
 
 
 ### 5. DAX Measures
