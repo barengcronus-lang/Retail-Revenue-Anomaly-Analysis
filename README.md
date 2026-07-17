@@ -23,7 +23,7 @@ Subcategory 2023 Revenue Share 2024 Revenue Share Labels 4.01%-16.75%  Paper 5.2
 
 Finding: Labels and Paper showed the sharpest revenue-share growth. Drilling into the product-level hierarchy confirmed the cause: pricing changes and product mix shifts introduced in January 2024, including new product launches and the removal of underperforming SKUs.
 
-# ✅ Findings
+## ✅ Findings
 
 
 Office Supply revenue grew significantly (R1,757,409 → R3,555,802) while units sold remained relatively flat (2,010 → 2,029), indicating growth was not volume-driven
@@ -33,7 +33,7 @@ Labels and Paper drove the largest revenue-share gains, followed by Printer Ink,
 Product-level drill-down confirmed pricing changes and product mix shifts (new launches, discontinued underperformers) in January 2024 as the key revenue driver
 
 
-# 💡 Recommendations
+## 💡 Recommendations
 
 
 Reduce discount spend from January–September in Office Supplies — no measurable correlation with units sold in this window
@@ -43,3 +43,86 @@ Investigate the specific pricing/mix decisions behind the Labels and Paper growt
 Assess whether Printer Ink, Binders, and Stationery would benefit from similar pricing or mix strategies
 Establish a recurring quarterly review to proactively identify and retire underperforming products
 Add a Revenue per Unit YoY measure to catch future price/mix-driven shifts earlier, without a full retrospective investigation
+
+## 🛠️ Technical Process
+
+### 1. Data Ingestion
+
+Data was sourced as CSV and connected via Power BI's Text/CSV connector, then transformed in Power Query before modeling.
+
+### 2. Data Cleaning (Power Query)
+
+The raw dataset contained intentionally realistic data quality issues, resolved through a structured sequence of applied steps:
+
+
+Inconsistent date formats (2022-12-28, 07/20/2023, 12.12.2022) standardized
+Duplicate rows removed
+Combined fields split — e.g., "Office Chairs - Standard 158" separated into Sub-Category, Product Name, and Product Code
+Text normalization — inconsistent casing and whitespace fixed via Capitalize Each Word, Trim, and Clean Text
+Invalid values filtered — e.g., a discount value of "1,5" (150%, clearly erroneous) removed
+~24 targeted Replace Value steps to resolve abbreviations and typos (e.g., province codes like "mp", "w. cape", "kzn" mapped to full names)
+
+
+### 3. Feature Engineering
+
+A calculated column sales (excluding discount) = [Quantity] * [Unit Price] was added to isolate gross sales from discount impact, enabling clean analysis of discount effects independent of pricing.
+
+### 4. Data Modeling — Star Schema
+
+The cleaned fact table (Sales_Fact) was connected via one-to-many relationships to four dimension tables:
+
+
+Customer_Dim
+Product_Dim
+Region_Dim
+Date_Table (custom-built, including Month_Name, Quarter, and Week via DAX)
+
+
+### 5. DAX Measures
+
+Month-over-month prior sales:
+
+daxSales PM =
+CALCULATE(
+    [Total_Revenue],
+    DATEADD(Date_Table[Date], -1, MONTH)
+)
+
+Month-over-month growth %:
+
+daxMoM Growth % = DIVIDE([MoM Growth], [Sales PM])
+
+Year-over-year revenue %:
+
+daxYoY Revenue % =
+VAR CurrentRevenue = [Total_Revenue]
+VAR PriorYearRevenue =
+    CALCULATE(
+        [Total_Revenue],
+        SAMEPERIODLASTYEAR(Date_Table[Date])
+    )
+VAR Result =
+    DIVIDE(
+        CurrentRevenue - PriorYearRevenue,
+        PriorYearRevenue
+    )
+RETURN Result
+
+### 6. Report Structure — Four-Page Analytical Narrative
+
+
+Overview — category/subcategory revenue breakdown, YoY headline metrics
+Monthly Sales & Discount Analysis — scatter plot and dual-axis discount/units-sold chart to test the discounting hypothesis
+Office Supplies: Sub-Category Breakdown — synced matrix and pie chart drilling into revenue, units, and price by subcategory
+Findings and Recommendations — narrative conclusions and action items
+
+
+
+## 🧰 Tools & Skills Demonstrated
+
+
+Power Query (ETL/ELT): data cleaning, transformation, column splitting, custom columns
+Data Modeling: star-schema design, one-to-many relationships, surrogate keys
+DAX: CALCULATE, SAMEPERIODLASTYEAR, DATEADD, DIVIDE, variables
+Power BI Service / Report Design: synced visuals, drill-through, matrix hierarchies, multi-page narrative structure
+Analytical Method: hypothesis-driven investigation rather than descriptive-only reporting
