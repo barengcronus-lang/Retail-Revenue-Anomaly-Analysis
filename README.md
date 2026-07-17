@@ -42,6 +42,8 @@ Finding: Labels and Paper showed the sharpest revenue-share growth. Drilling int
 6. Establish a recurring quarterly review to proactively identify and retire underperforming products
 7. Add a Revenue per Unit YoY measure to catch future price/mix-driven shifts earlier, without a full retrospective investigation
 
+https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/blob/5a9b9ed771255dc2d234e422e73ad8fcb60d48eb/STEP%20BY%20STEP%20SCREENSHOTS/6.%20FINAL%20REPORT/REPORT%20PAGES%20(4).png
+
 ## 🛠️ Technical Process
 
 ### 1. Data Ingestion
