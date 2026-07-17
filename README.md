@@ -69,6 +69,7 @@ https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/dd8dbf
 ### 3. Feature Engineering
 
 A calculated column sales (excluding discount) = [Quantity] * [Unit Price] was added to isolate gross sales from discount impact, enabling clean analysis of discount effects independent of pricing.
+
 https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/91bbae9ef4fd90dd5d96dbbf44bc149fc3ecbfb2/STEP%20BY%20STEP%20SCREENSHOTS/3.%20FEATURE%20ENGINEERING
 
 ### 4. Data Modeling — Star Schema
