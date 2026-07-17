@@ -12,7 +12,6 @@ In 2023, Office Supply generated R1,757,409 in revenue from 2,010 units sold. In
 ### Hypothesis 1: Discounting
 
 A scatter plot (month × revenue, bubble size = units sold) and a dual-axis discount/units-sold line chart were used to test whether promotional discounting explained the surge.
-
 Finding: Discount rates were nearly identical across both years (January–December). More notably, discounting only showed a measurable relationship with units sold during October–December; from January to early September, discount changes had no visible effect on volume. This hypothesis was ruled out.
 
 ### Hypothesis 2: Product Mix & Pricing
@@ -93,7 +92,7 @@ daxMoM Growth % = DIVIDE([MoM Growth], [Sales PM])
 
 Year-over-year revenue %:
 
-daxYoY Revenue % =
+dax YoY Revenue % =
 VAR CurrentRevenue = [Total_Revenue]
 VAR PriorYearRevenue =
     CALCULATE(
@@ -110,18 +109,18 @@ RETURN Result
 ### 6. Report Structure — Four-Page Analytical Narrative
 
 
-Overview — category/subcategory revenue breakdown, YoY headline metrics
-Monthly Sales & Discount Analysis — scatter plot and dual-axis discount/units-sold chart to test the discounting hypothesis
-Office Supplies: Sub-Category Breakdown — synced matrix and pie chart drilling into revenue, units, and price by subcategory
-Findings and Recommendations — narrative conclusions and action items
+1. Overview — category/subcategory revenue breakdown, YoY headline metrics
+2. Monthly Sales & Discount Analysis — scatter plot and dual-axis discount/units-sold chart to test the discounting hypothesis
+3. Office Supplies: Sub-Category Breakdown — synced matrix and pie chart drilling into revenue, units, and price by subcategory
+4. Findings and Recommendations — narrative conclusions and action items
 
 
 
 ## 🧰 Tools & Skills Demonstrated
 
 
-Power Query (ETL/ELT): data cleaning, transformation, column splitting, custom columns
-Data Modeling: star-schema design, one-to-many relationships, surrogate keys
-DAX: CALCULATE, SAMEPERIODLASTYEAR, DATEADD, DIVIDE, variables
-Power BI Service / Report Design: synced visuals, drill-through, matrix hierarchies, multi-page narrative structure
-Analytical Method: hypothesis-driven investigation rather than descriptive-only reporting
+1. Power Query (ETL/ELT): data cleaning, transformation, column splitting, custom columns
+2. Data Modeling: star-schema design, one-to-many relationships, surrogate keys
+3. DAX: CALCULATE, SAMEPERIODLASTYEAR, DATEADD, DIVIDE, variables
+4. Power BI Service / Report Design: synced visuals, drill-through, matrix hierarchies, multi-page narrative structure
+5. Analytical Method: hypothesis-driven investigation rather than descriptive-only reporting
