@@ -47,7 +47,7 @@ Finding: Labels and Paper showed the sharpest revenue-share growth. Drilling int
 ### 1. Data Ingestion
 
 Data was sourced as CSV and connected via Power BI's Text/CSV connector, then transformed in Power Query before modeling.
-
+https://github.com/barengcronus-lang/Retail-Revenue-Anomaly-Analysis/tree/73989c0ecf8b01a5f846c8554b352cdf3d99da2d/MESSY%20SALES%20FILE%20CVS
 ### 2. Data Cleaning (Power Query)
 
 The raw dataset contained intentionally realistic data quality issues, resolved through a structured sequence of applied steps:
